@@ -30,15 +30,16 @@
     </div>
     <ol class="breadcrumb editContent">
         <li class="breadcrumb-item">
-            <a href="index.html" class="editContent">Home</a>
+            <a href="/" class="editContent">Домашняя страница - список фильмов</a>
         </li>
-        <li class="breadcrumb-item active editContent">Single Page</li>
+
     </ol>
     {% block content %}
 
     {% endblock content %}
     {% include 'include/footer.html' %}
-
 </div>
+<script src="{% static 'js/scripts.js' %}"></script>
+<script src="http://twitter.github.com/hogan.js/builds/3.0.1/hogan-3.0.1.js"></script>
 </body>
 </html>
