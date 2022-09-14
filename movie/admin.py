@@ -103,8 +103,6 @@ class MovieAdmin(admin.ModelAdmin):
     get_image.short_description = "Постер"
 
 
-
-
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "parent", "movie", "id")
@@ -129,7 +127,7 @@ class PersonsAdmin(admin.ModelAdmin):
 
 @admin.register(Rating)
 class RatingAdmin(admin.ModelAdmin):
-    list_display = ("movie", "ip")
+    list_display = ("movie", "star", "ip")
 
 
 @admin.register(Stars)
