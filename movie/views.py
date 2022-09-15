@@ -36,6 +36,7 @@ class MovieDetailView(GenreYear, DetailView):
 
 class AddComment(View):
     """Отзывы"""
+
     def post(self, request, pk):
         form = CommentForm(request.POST)
         movie = Movie.objects.get(id=pk)
@@ -58,6 +59,7 @@ class PersonView(GenreYear, DetailView):
 class FilterMovieView(GenreYear, ListView):
     """Фильтр фильмов"""
     paginate_by = 2
+
     def get_queryset(self):
         queryset = Movie.objects.filter(Q(year__in=self.request.GET.getlist("year")) |
                                         Q(genres__in=self.request.GET.getlist("genre"))).distinct()
@@ -105,3 +107,16 @@ class AddStarRating(View):
             return HttpResponse(status=201)
         else:
             return HttpResponse(status=400)
+
+
+class Search(ListView):
+    """Поиск фильмов"""
+    paginate_by = 3
+
+    def get_queryset(self):
+        return Movie.objects.filter(title__icontains=self.request.GET.get("q"))
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["q"] = f'q={self.request.GET.get("q")}&'
+        return context
