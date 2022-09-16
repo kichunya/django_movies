@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-fj+!61s)7@)_=e0abg-_2=8on3m+(jjxf0n80ioo%&qtxe==sv'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -217,8 +217,7 @@ CKEDITOR_CONFIGS = {
 }
 
 
-RECAPTCHA_PUBLIC_KEY = '6Leabf4hAAAAAH4zx5ltKJRIcBSlAOAgfRBSPjlv'
-RECAPTCHA_PRIVATE_KEY = '6Leabf4hAAAAABH5hoP63gHE8ySqOFd1vZbxcfmd'
+
 RECAPTCHA_DEFAULT_ACTION = 'generic'
 RECAPTCHA_SCORE_THRESHOLD = 0.5
 
